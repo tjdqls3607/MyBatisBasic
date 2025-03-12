@@ -5,7 +5,12 @@
 <mapper namespace="ch01.dao.BookDao">
     <select id="listBook" resultType="ch01.dto.BookDto">
         select  bookid bookId, bookname bookName, publisher, price from book;
+    </select>
 
+    <select id="detailBook" resultType="ch01.dto.BookDto" parameterType="int">
+        select  bookid bookId, bookname bookName, publisher, price
+        from book
+        where bookid = #{bookId};
     </select>
 
 </mapper>

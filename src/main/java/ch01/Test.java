@@ -1,5 +1,7 @@
 package ch01;
 
+import ch01.dao.BookDao;
+import ch01.dto.BookDto;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -7,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
 import java.io.Reader;
+import java.util.List;
 
 // 1. mybatis 의존성 추가
 // 2. mybatis 설정 (xml, java)
@@ -24,8 +27,21 @@ public class Test {
         // SqlSession 객체를 Factory 패턴으로 생성
         SqlSession session = sqlSessionFactory.openSession();
 
-        // mybatis 로 DB 연동 작업 진행
+        BookDao bookDao = session.getMapper(BookDao.class); // BookDao 클래스 정보를 SqlSession 객체에 전달
 
+        // mybatis 로 DB 연동 작업 진행
+        // 목록
+//        {
+//            List<BookDto> bookList = bookDao.listBook();
+//            for (BookDto bookDto : bookList) {
+//                System.out.println(bookDto);
+//            }
+//        }
+        // 상세
+        {
+            BookDto bookDto = bookDao.detailBook(1);
+                System.out.println(bookDto);
+        }
         session.close();
     }
 }

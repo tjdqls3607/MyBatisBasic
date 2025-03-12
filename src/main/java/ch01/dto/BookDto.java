@@ -41,6 +41,6 @@ public class BookDto {
     }
     @Override
     public String toString() {
-        return bookid + "\t" + bookname + "\t" + publisher + "\t" + price + "\n";
+        return bookid + " " + bookname + " " + publisher + " " + price + " ";
     }
 }

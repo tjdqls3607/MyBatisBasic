@@ -1,31 +1,31 @@
 package ch01.dto;
 
 public class BookDto {
-    private int bookid;
-    private String bookname;
+    private int bookId;
+    private String bookName;
     private String publisher;
     private int price;
 
     public BookDto() {}
     public BookDto(int bookid, String bookname, String publisher, int price) {
         super();
-        this.bookid = bookid;
-        this.bookname = bookname;
+        this.bookId = bookid;
+        this.bookName = bookname;
         this.publisher = publisher;
         this.price = price;
 
     }
     public int getBookid() {
-        return bookid;
+        return bookId;
     }
     public void setBookid(int bookid) {
-        this.bookid = bookid;
+        this.bookId = bookid;
     }
-    public String getBookname() {
-        return bookname;
+    public String getBookName() {
+        return bookName;
     }
-    public void setBookname(String bookname) {
-        this.bookname = bookname;
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
     public String getPublisher() {
         return publisher;
@@ -41,6 +41,6 @@ public class BookDto {
     }
     @Override
     public String toString() {
-        return bookid + " " + bookname + " " + publisher + " " + price + " ";
+        return bookId + " " + bookName + " " + publisher + " " + price + " ";
     }
 }

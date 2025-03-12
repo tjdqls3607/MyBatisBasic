@@ -38,9 +38,32 @@ public class Test {
 //            }
 //        }
         // 상세
+//        {
+//            BookDto bookDto = bookDao.detailBook(1);
+//                System.out.println(bookDto);
+//        }
+
+//         등록
+//        {
+//            BookDto bookDto = new BookDto(11, "11번째 책", "11 출판사", 20000);
+//            int ret = bookDao.insertBook(bookDto);
+//            System.out.println(ret);
+//            session.commit();   // 등록,수정,삭제는 commit() 필요
+//        }
+
+        // 수정
+//        {
+//            BookDto bookDto = new BookDto(11, "11번째 책 수정", "11 출판사 수정", 30000);
+//            int ret = bookDao.updateBook(bookDto);
+//            System.out.println(ret);
+//            session.commit();   // 등록,수정,삭제는 commit() 필요
+//        }
+
+        // 삭제
         {
-            BookDto bookDto = bookDao.detailBook(1);
-                System.out.println(bookDto);
+            int ret = bookDao.deleteBook(11);
+            System.out.println(ret);
+            session.commit();   // 등록,수정,삭제는 commit() 필요
         }
         session.close();
     }

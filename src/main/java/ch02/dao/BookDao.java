@@ -1,6 +1,6 @@
 package ch02.dao;
 
-import ch01.dto.BookDto;
+import ch02.dto.BookDto;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;

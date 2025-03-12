@@ -1,12 +1,14 @@
 package ch02;
 
-import ch01.dao.BookDao;
+import ch02.dao.BookDao;
+import ch02.dto.BookDto;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.Reader;
+import java.util.List;
 
 // 1. mybatis 의존성 추가
 // 2. mybatis 설정 (xml, java)
@@ -30,17 +32,17 @@ public class Test {
 
         // mybatis 로 DB 연동 작업 진행
         // 목록
-//        {
-//            List<BookDto> bookList = bookDao.listBook();
-//            for (BookDto bookDto : bookList) {
-//                System.out.println(bookDto);
-//            }
-//        }
-        // 상세
-//        {
-//            BookDto bookDto = bookDao.detailBook(1);
-//                System.out.println(bookDto);
-//        }
+        {
+            List<BookDto> bookList = bookDao.listBook();
+            for (BookDto bookDto : bookList) {
+                System.out.println(bookDto);
+            }
+        }
+//         상세
+        {
+            BookDto bookDto = bookDao.detailBook(1);
+                System.out.println(bookDto);
+        }
 
 //         등록
 //        {
@@ -59,11 +61,11 @@ public class Test {
 //        }
 
         // 삭제
-        {
-            int ret = bookDao.deleteBook(11);
-            System.out.println(ret);
-            session.commit();   // 등록,수정,삭제는 commit() 필요
-        }
+//        {
+//            int ret = bookDao.deleteBook(11);
+//            System.out.println(ret);
+//            session.commit();   // 등록,수정,삭제는 commit() 필요
+//        }
         session.close();
     }
 }
